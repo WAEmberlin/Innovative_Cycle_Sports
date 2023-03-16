@@ -1,23 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import './index.css';
+import Navigation from './Navbar';
+import Home from './Home';
+import Inventory from './Inventory';
+import About from './About';
+import NotFound from './NotFound';
+import Social from './Social';
+import Footer from './Footer'
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <Router>
+      <div className="App">
+        <Navigation />
+        <Social />
+        <div className="content">
+          <Routes>
+            <Route exact path="/" element={<Home />}>
+            </Route>
+            <Route exact path="/Inventory" element={<Inventory />}>
+            </Route>
+            <Route exact path="/About" element={<About />}>
+            </Route>
+            <Route path="*" element={<NotFound />}>
+            </Route>
+          </Routes>
+        </div>
+      </div>
+    </Router>
+    <Footer />
     </div>
   );
 }
