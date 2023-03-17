@@ -3,7 +3,7 @@ import Logo from './Photos/Logo.jpg'
 const Home = () => {
     return ( 
     <div>
-        <img src={Logo} className="mainPhoto" alt="Innovative Cyclesports Logo"/>
+        <img src={ Logo } className="mainPhoto" alt="Innovative Cyclesports Logo"/>
         <div className="typewriter">
             <Typewriter options={{ loop: true }}
             onInit={ (typewriter) => {
